@@ -1,0 +1,28 @@
+---
+title: "Developing Data Products Week 3"
+author: "Paul Stables"
+date: "22/09/2020"
+output: ioslides_presentation
+---
+## Tooth Growth Plot
+
+Plot
+
+```{r, echo = FALSE, include = FALSE, warning = FALSE}
+
+library(ggplot2)
+library(plotly)
+data("ToothGrowth")
+
+g <- ggplot(ToothGrowth) +
+  aes(as.factor(dose),len, colour = supp) +
+  geom_boxplot() +
+  facet_wrap(ToothGrowth$supp)+
+  theme_classic() +
+  xlab("Dose")+
+  ylab("Tooth Length")
+```
+
+```{r, echo = FALSE, eval = TRUE, warning=FALSE}
+ggplotly(g)
+```

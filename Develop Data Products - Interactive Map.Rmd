@@ -1,0 +1,21 @@
+---
+title: "Map Example - Developing Data Products"
+author: "Paul Stables"
+date: "22/09/2020"
+output: html_document
+---
+
+```{r, echo = FALSE}
+library(leaflet)
+
+stPauls <- makeIcon(
+  iconUrl = "https://png2.cleanpng.com/sh/1a00a9b97634f3115fbef864aba539ba/L0KzQYm3UsI2N6Z5fZH0aYP2gLBuTgN1NaFmjd58LXPkhLnshQJidF5pitNCaX7qPbrzjQV0fKNmjNt4bj3lfMbsTfNie6VxfZ8AYUm2RbO8hsc5apc5SpCEOEO4SIa6VsE2OWo7SKgBMkO3SYW9TwBvbz==/kisspng-st-pauls-cathedral-drawing-illustration-blue-castle-5a935b5f78bf42.9835853615196066234946.png",
+  iconWidth = 150)
+
+map <- leaflet() %>% 
+  addTiles() %>% 
+  addMarkers(-0.098362,51.513870, icon = stPauls)
+map
+
+```
+
